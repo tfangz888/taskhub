@@ -6,15 +6,18 @@ CREATE TYPE task_status AS ENUM (
     'assigned'         -- 指派型（无需竞抢）
 );
 
--- 创建任务表
+-- 创建任务表, 每个任务要细分，不允许多人合作完成一个任务。可以多个各自竞抢同一个任务，竞抢到任务的都要完成任务，最后挑一个完成质量最好的任务可以获取分值
 CREATE TABLE tasks (
-    task_id BIGINT PRIMARY, 
+    task_id BIGINT PRIMARY KEY, 
     task_name VARCHAR(255) NOT NULL,
-    task_owner BIGINT NOT NULL,
+    task_owner BIGINT NOT NULL, -- 指向users表的user_id
     estimated_effort INTEGER NOT NULL,
     points INTEGER,
     bidder_limit INTEGER DEFAULT 2,
     status task_status NOT NULL DEFAULT 'unpublished'
+
+    -- 外键约束
+    FOREIGN KEY (task_owner) REFERENCES users(user_id)
 );
 
 --------------------------------------------------------------------------------------------
