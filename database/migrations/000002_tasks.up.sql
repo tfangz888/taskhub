@@ -10,6 +10,7 @@ CREATE TYPE task_status AS ENUM (
 CREATE TABLE tasks (
     task_id BIGINT PRIMARY KEY, 
     task_name VARCHAR(255) NOT NULL,
+    description TEXT,  -- 任务描述字段
     task_owner BIGINT NOT NULL, -- 指向users表的user_id
     estimated_effort INTEGER NOT NULL,
     points INTEGER,
