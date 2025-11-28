@@ -3,9 +3,9 @@ CREATE TABLE task_bids (
     task_id BIGINT NOT NULL,                     -- 外键：任务
     user_id BIGINT NOT NULL,                     -- 外键：用户
     bid_time TIMESTAMPTZ NOT NULL DEFAULT NOW(), -- 竞抢时间
-    finished BOOLEAN DEFAULT FALSE; -- 是否完成了任务，未完成任务的，最终统计时扣1个分值
-    proposal TEXT;    -- 用户完成的任务的描述，包括代码commitID，文档链接，bugID等
-    is_winner BOOLEAN DEFAULT FALSE;  -- 完成任务后是否为最终方案中标人，每个任务只能有一个中标人，只有中标人可以获取任务的分值
+    finished BOOLEAN DEFAULT FALSE, -- 是否完成了任务，未完成任务的，最终统计时扣1个分值
+    proposal TEXT,    -- 用户完成的任务的描述，包括代码commitID，文档链接，bugID等
+    is_winner BOOLEAN DEFAULT FALSE,  -- 完成任务后是否为最终方案中标人，每个任务只能有一个中标人，只有中标人可以获取任务的分值
     UNIQUE (task_id, user_id),                   -- 防止同一用户重复竞抢
 
     -- 外键约束

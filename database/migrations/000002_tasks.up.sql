@@ -15,7 +15,7 @@ CREATE TABLE tasks (
     estimated_effort INTEGER NOT NULL,
     points INTEGER,
     bidder_limit INTEGER DEFAULT 2,
-    status task_status NOT NULL DEFAULT 'unpublished'
+    status task_status NOT NULL DEFAULT 'unpublished',
 
     -- 外键约束
     FOREIGN KEY (task_owner) REFERENCES users(user_id)
