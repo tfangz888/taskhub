@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   postgres:
     image: postgres:17
@@ -15,7 +17,7 @@ services:
 volumes:
   pgdata:
 
-# docker compose config # 检查语法
-# docker compose up -d
-# docker compose ps
-# docker compose down
+# docker-compose config # 检查语法
+# docker-compose up -d
+# docker-compose ps
+# docker-compose down
