@@ -5,12 +5,12 @@
 # 编写 SQL
 
 # 迁移
-# migrate -path migrations -database "postgres://user:pass@localhost:5432/dbname?sslmode=disable" up
+# migrate -path migrations -database "postgres://user:pass@localhost:5432/taskhub?sslmode=disable" up
 
 # 回滚
-# migrate -path migrations -database "postgres://user:pass@localhost:5432/dbname?sslmode=disable" down 1
+# migrate -path migrations -database "postgres://user:pass@localhost:5432/taskhub?sslmode=disable" down 1
 
 # 查看版本
-# migrate -path migrations -database "..." version
+# migrate -path migrations -database "postgres://user:pass@localhost:5432/taskhub?sslmode=disable" version
 
 
