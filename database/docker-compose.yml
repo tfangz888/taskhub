@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:15
+    image: postgres:17
     container_name: postgres
     environment:
       POSTGRES_USER: taskhub
@@ -15,6 +15,7 @@ services:
 volumes:
   pgdata:
 
+# docker compose config # 检查语法
 # docker compose up -d
 # docker compose ps
 # docker compose down
