@@ -19,5 +19,5 @@ PlatformSettings: SDK:17
 spring init --dependencies=web,postgresql --java-version=17 --build=maven taskhub  
 
 ./mvnw clean package  
-./mvnw spring-boot:start  
+./mvnw spring-boot:start 暂跑不起来，请用  ./mvnw spring-boot:run
 
