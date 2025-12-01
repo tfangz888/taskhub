@@ -1,8 +1,8 @@
 package com.example.taskhub.domain;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Type;
-
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "tasks")
@@ -33,7 +33,8 @@ public class Task {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false, columnDefinition = "task_status")
-    private TaskStatus status = TaskStatus.UNPUBLISHED;
+    @JdbcTypeCode(SqlTypes.NAMED_ENUM)
+    private TaskStatus status = TaskStatus.unpublished;
 
     // Getters and Setters
     public Long getTaskId() {
