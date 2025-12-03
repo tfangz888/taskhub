@@ -21,3 +21,5 @@ spring init --dependencies=web,postgresql --java-version=17 --build=maven taskhu
 ./mvnw clean package  
 ./mvnw spring-boot:start 暂跑不起来，请用  ./mvnw spring-boot:run
 
+swagger地址
+http://ip:8080/swagger-ui/index.html
