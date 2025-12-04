@@ -4,10 +4,10 @@
 import React, { Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 
-import AppLayout from './layout/AppLayout.jsx'
+// import AppLayout from './layout/AppLayout.jsx'
 
-const Dashboard = lazy(() => import('./pages/Dashboard.jsx'))
-const Users = lazy(() => import('./pages/Users.jsx'))
+const Dashboard = lazy(() => import('./pages/Dashboard/index.jsx'))
+const Users = lazy(() => import('./pages/Users/index.jsx'))
 const Settings = lazy(() => import('./pages/Settings.jsx'))
 
 function App() {
