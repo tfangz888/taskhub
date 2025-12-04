@@ -1,3 +1,4 @@
+// 入口挂载与全局主题
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ConfigProvider, App as AntdApp, theme as antdTheme } from 'antd'
