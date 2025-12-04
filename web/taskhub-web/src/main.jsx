@@ -1,4 +1,5 @@
 // 入口挂载与全局主题
+// 使用 antd 的 ConfigProvider 提前设置基础主题 token
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ConfigProvider, App as AntdApp, theme as antdTheme } from 'antd'
