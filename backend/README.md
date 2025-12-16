@@ -23,3 +23,6 @@ spring init --dependencies=web,postgresql --java-version=17 --build=maven taskhu
 
 swagger地址
 http://ip:8080/swagger-ui/index.html
+
+生产环境启动
+export SERVER_PORT=18888 && nohup java -jar taskhub-0.0.1-SNAPSHOT.jar >/tmp/taskhub.log 2>&1 &
