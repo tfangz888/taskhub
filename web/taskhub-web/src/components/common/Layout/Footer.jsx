@@ -12,7 +12,7 @@ const AppFooter = () => {
       color: 'rgba(255, 255, 255, 0.65)',
       flexShrink: 0
     }}>
-      TaskHub ©2024 Created with React & Ant Design
+      苏州基础服务部
     </Footer>
   );
 };
