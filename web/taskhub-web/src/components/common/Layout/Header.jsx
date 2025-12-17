@@ -14,19 +14,42 @@ const AppHeader = () => {
       key: '2',
       label: <Link to="/statistics">统计数据</Link>,
     },
+    {
+      key: '3',
+      label: <Link to="/dashboard">仪表盘</Link>,
+    },
+    {
+      key: '4',
+      label: <Link to="/users">用户管理</Link>,
+    },
+    {
+      key: '5',
+      label: <Link to="/settings">设置</Link>,
+    },
   ];
 
   return (
-    <Header style={{ display: 'flex', alignItems: 'center' }}>
-      <div className="demo-logo" />
+    <Header 
+      style={{ 
+        display: 'flex', 
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'sticky',
+        top: 0,
+        zIndex: 1,
+        width: '100%',
+        padding: 0
+      }}
+    >
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
         items={items}
         style={{
-          flex: 1,
-          minWidth: 0,
+          width: 'auto',
+          border: 'none',
+          backgroundColor: 'transparent'
         }}
       />
     </Header>
