@@ -19,6 +19,7 @@ function App() {
       <Suspense fallback={<Spin style={{ display: 'block', margin: '48px auto' }} />}>
         <Routes>
           <Route path="/" element={<Navigate to="/task-square" replace />} />
+          <Route path="/index.html" element={<Navigate to="/task-square" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/users" element={<Users />} />
           <Route path="/settings" element={<Settings />} />
