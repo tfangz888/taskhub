@@ -1,10 +1,18 @@
-import React from 'react';
-import { Layout, Menu } from 'antd';
+import React, { useState } from 'react';
+import { Layout, Menu, Button } from 'antd';
 import { Link } from 'react-router-dom';
+import { SunOutlined, MoonOutlined } from '@ant-design/icons';
 
 const { Header } = Layout;
 
 const AppHeader = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+  };
+
   const items = [
     {
       key: '1',
@@ -14,18 +22,6 @@ const AppHeader = () => {
       key: '2',
       label: <Link to="/statistics">统计数据</Link>,
     },
-    {
-      key: '3',
-      label: <Link to="/dashboard">仪表盘</Link>,
-    },
-    {
-      key: '4',
-      label: <Link to="/users">用户管理</Link>,
-    },
-    {
-      key: '5',
-      label: <Link to="/settings">设置</Link>,
-    },
   ];
 
   return (
@@ -33,14 +29,16 @@ const AppHeader = () => {
       style={{ 
         display: 'flex', 
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        padding: '0 24px',
         position: 'sticky',
         top: 0,
         zIndex: 1,
         width: '100%',
-        padding: 0
       }}
     >
+      <div />
+      
       <Menu
         theme="dark"
         mode="horizontal"
@@ -49,7 +47,20 @@ const AppHeader = () => {
         style={{
           width: 'auto',
           border: 'none',
-          backgroundColor: 'transparent'
+          backgroundColor: 'transparent',
+          fontSize: '18px'
+        }}
+      />
+      
+      <Button
+        type="text"
+        icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
+        onClick={toggleTheme}
+        style={{
+          color: '#fff',
+          fontSize: '16px',
+          border: 'none',
+          background: 'transparent'
         }}
       />
     </Header>
