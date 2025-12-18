@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       }}
     >
       <AntdApp>
-        <BrowserRouter>
+        <BrowserRouter basename="/task">
           <App />
         </BrowserRouter>
       </AntdApp>
