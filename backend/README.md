@@ -26,3 +26,7 @@ http://ip:8080/swagger-ui/index.html
 
 生产环境启动
 export SERVER_PORT=18899 && nohup java -jar taskhub-0.0.1-SNAPSHOT.jar >/tmp/taskhub.log 2>&1 &
+
+访问接口
+原生访问 http://IPXXX:18899/users
+通过nginx代理访问 http://IPXXX:18888/taskhub/api/users
